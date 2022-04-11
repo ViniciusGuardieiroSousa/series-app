@@ -4,20 +4,16 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
 import android.widget.Toast
-import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import br.com.vinicius.guardieiro.sousa.commons.presentation.view.BaseFragment
-import br.com.vinicius.guardieiro.sousa.listseries.data.di.listModules
+import br.com.vinicius.guardieiro.sousa.listseries.di.listModules
 import br.com.vinicius.guardieiro.sousa.listseries.databinding.FragmentListBinding
 import br.com.vinicius.guardieiro.sousa.listseries.presentation.view.recyclerview.ListSeriesAdapter
 import br.com.vinicius.guardieiro.sousa.listseries.presentation.viewModel.EitherListSeriesPresentationModel
 import br.com.vinicius.guardieiro.sousa.listseries.presentation.viewModel.ListSeriesViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
-import org.koin.core.context.loadKoinModules
-import org.koin.core.context.unloadKoinModules
 
 class ListSeriesFragment : BaseFragment(listOf(listModules)) {
 

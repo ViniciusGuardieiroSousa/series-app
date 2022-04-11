@@ -1,17 +1,20 @@
 package br.com.vinicius.guardieiro.sousa.searchfeature.data.network.model
 
+import androidx.annotation.Keep
 
+@Keep
 data class SearchModelNetwork (
     val score: Double,
     val show: Show
 )
 
+@Keep
 data class Show (
     val id: Long,
     val url: String,
     val name: String,
-    val type: Type,
-    val language: Language,
+    val type: String,
+    val language: String,
     val genres: List<String>,
     val status: String,
     val runtime: Long? = null,
@@ -32,40 +35,32 @@ data class Show (
     val _links: Links
 )
 
+@Keep
 data class Externals (
     val tvrage: Long? = null,
     val thetvdb: Long? = null,
     val imdb: String? = null
 )
 
+@Keep
 data class Image (
     val medium: String,
     val original: String
 )
 
-enum class Language(val value: String) {
-    English("English"),
-    Mongolian("Mongolian");
-
-    companion object {
-        public fun fromValue(value: String): Language = when (value) {
-            "English"   -> English
-            "Mongolian" -> Mongolian
-            else        -> throw IllegalArgumentException()
-        }
-    }
-}
-
+@Keep
 data class Links (
-    val self: Nextepisode,
-    val previousepisode: Nextepisode? = null,
-    val nextepisode: Nextepisode? = null
+    val self: NextEpisode,
+    val previousepisode: NextEpisode? = null,
+    val nextepisode: NextEpisode? = null
 )
 
-data class Nextepisode (
+@Keep
+data class NextEpisode (
     val href: String
 )
 
+@Keep
 data class Network (
     val id: Long,
     val name: String,
@@ -73,31 +68,21 @@ data class Network (
     val officialSite: String? = null
 )
 
+@Keep
 data class Country (
     val name: String,
     val code: String,
     val timezone: String
 )
 
+@Keep
 data class Rating (
     val average: Double? = null
 )
 
+@Keep
 data class Schedule (
     val time: String,
     val days: List<String>
 )
-
-enum class Type(val value: String) {
-    Documentary("Documentary"),
-    Scripted("Scripted");
-
-    companion object {
-        public fun fromValue(value: String): Type = when (value) {
-            "Documentary" -> Documentary
-            "Scripted"    -> Scripted
-            else          -> throw IllegalArgumentException()
-        }
-    }
-}
 

@@ -1,4 +1,4 @@
-package br.com.vinicius.guardieiro.sousa.listseries.data.di
+package br.com.vinicius.guardieiro.sousa.listseries.di
 
 import br.com.vinicius.guardieiro.sousa.listseries.data.network.api.ListSeriesApi
 import br.com.vinicius.guardieiro.sousa.listseries.data.repository.ListSeriesRepositoryImpl
@@ -11,8 +11,8 @@ import org.koin.dsl.module
 import retrofit2.Retrofit
 
 val listModules = module {
-    single<ListSeriesRepository> { ListSeriesRepositoryImpl(get()) }
-    single<GetListSeriesUseCase> { GetListSeriesUseCaseImpl(get()) }
+    factory<ListSeriesRepository> { ListSeriesRepositoryImpl(get()) }
+    factory<GetListSeriesUseCase> { GetListSeriesUseCaseImpl(get()) }
     viewModel { ListSeriesViewModel(get()) }
     factory { provideListSeriesApi(get()) }
 }

@@ -1,5 +1,8 @@
 package br.com.vinicius.guardieiro.sousa.detailfeature.data.network.model
 
+import androidx.annotation.Keep
+
+@Keep
 data class DetailSeriesNetworkModel (
     val id: Long,
     val url: String,
@@ -26,16 +29,19 @@ data class DetailSeriesNetworkModel (
     val _links: LinksSeries
 )
 
+@Keep
 data class Externals (
     val tvrage: Long,
     val thetvdb: Long,
     val imdb: String
 )
 
+@Keep
 data class Previousepisode (
     val href: String
 )
 
+@Keep
 data class Network (
     val id: Long,
     val name: String,
@@ -43,17 +49,20 @@ data class Network (
     val officialSite: String
 )
 
+@Keep
 data class Country (
     val name: String,
     val code: String,
     val timezone: String
 )
 
+@Keep
 data class Schedule (
     val time: String,
     val days: List<String>
 )
 
+@Keep
 data class LinksSeries (
     val self: Self,
     val previousepisode: Previousepisode
