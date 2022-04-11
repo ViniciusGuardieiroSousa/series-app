@@ -1,4 +1,4 @@
-package br.com.vinicius.guardieiro.sousa.detailfeature.data.di
+package br.com.vinicius.guardieiro.sousa.detailfeature.di
 
 import br.com.vinicius.guardieiro.sousa.detailfeature.data.network.api.DetailSeriesApi
 import br.com.vinicius.guardieiro.sousa.detailfeature.data.repository.DetailSeriesRepositoryImpl

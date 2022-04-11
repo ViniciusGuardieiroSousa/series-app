@@ -11,7 +11,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import br.com.vinicius.guardieiro.sousa.commons.presentation.view.ImageDownloader
 import br.com.vinicius.guardieiro.sousa.detailfeature.R
-import br.com.vinicius.guardieiro.sousa.detailfeature.data.di.detailModules
+import br.com.vinicius.guardieiro.sousa.detailfeature.di.detailModules
 import br.com.vinicius.guardieiro.sousa.detailfeature.databinding.ActivityDetailSeriesBinding
 import br.com.vinicius.guardieiro.sousa.detailfeature.presentation.model.DetailEpisodePresentationModel
 import br.com.vinicius.guardieiro.sousa.detailfeature.presentation.model.DetailSeriesPresentationModel
