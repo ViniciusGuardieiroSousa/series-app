@@ -1,0 +1,14 @@
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+rootProject.name = "Series"
+include ':app'
+include ':SearchSeriesFeature'
+include ':commons'
+include ':ListSeriesFeature'
+include ':FavoritesSeriesFeature'
+include ':DetailFeature'

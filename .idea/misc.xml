@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/guardiaoInc/Series/DetailFeature/src/main/res/drawable-v23/spinner_bg.xml" value="0.3509259259259259" />
+        <entry key="..\:/guardiaoInc/Series/DetailFeature/src/main/res/drawable/spinner_bg.xml" value="0.3509259259259259" />
+        <entry key="..\:/guardiaoInc/Series/DetailFeature/src/main/res/layout/activity_detail_series.xml" value="0.26268115942028986" />
+        <entry key="..\:/guardiaoInc/Series/DetailFeature/src/main/res/layout/item_seasons_series.xml" value="0.26268115942028986" />
+        <entry key="..\:/guardiaoInc/Series/DetailFeature/src/main/res/layout/spinner_item.xml" value="0.21145833333333333" />
+        <entry key="..\:/guardiaoInc/Series/FavoritesSeriesFeature/src/main/res/layout/fragment_favorite.xml" value="0.15081521739130435" />
+        <entry key="..\:/guardiaoInc/Series/FavoritesSeriesFeature/src/main/res/layout/fragment_list.xml" value="0.26268115942028986" />
+        <entry key="..\:/guardiaoInc/Series/FavoritesSeriesFeature/src/main/res/layout/recycler_view_list_item.xml" value="0.26268115942028986" />
+        <entry key="..\:/guardiaoInc/Series/ListSeriesFeature/src/main/res/layout/fragment_search.xml" value="0.2694746376811594" />
+        <entry key="..\:/guardiaoInc/Series/ListSeriesFeature/src/main/res/layout/recycler_view_list_item.xml" value="0.1" />
+        <entry key="..\:/guardiaoInc/Series/SearchFeature/src/main/res/layout/fragment_search.xml" value="0.2664576802507837" />
+        <entry key="..\:/guardiaoInc/Series/SearchFeature/src/main/res/layout/recycler_view_search_item.xml" value="0.2957427536231884" />
+        <entry key="..\:/guardiaoInc/Series/SearchSeriesFeature/src/main/res/layout/fragment_search.xml" value="0.20520833333333333" />
+        <entry key="..\:/guardiaoInc/Series/SearchSeriesFeature/src/main/res/layout/recycler_view_search_item.xml" value="0.1" />
+        <entry key="..\:/guardiaoInc/Series/app/src/main/res/layout/activity_main.xml" value="0.2957427536231884" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
