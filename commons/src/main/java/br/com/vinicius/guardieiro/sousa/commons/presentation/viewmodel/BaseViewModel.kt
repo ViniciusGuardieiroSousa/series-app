@@ -13,7 +13,7 @@ open class BaseViewModel : ViewModel(){
         get() = _loadState
 
     init {
-        _loadState.postValue(false)
+        _loadState.postValue(true)
     }
 
     fun invokeSuspendWithLoad(block : suspend () -> Unit){

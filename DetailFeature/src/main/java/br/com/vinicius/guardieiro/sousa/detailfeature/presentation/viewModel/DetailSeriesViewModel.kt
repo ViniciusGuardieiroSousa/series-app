@@ -29,6 +29,10 @@ class DetailSeriesViewModel(
 
     var id : Long = 0
 
+    init {
+        _loadState.postValue(true)
+    }
+
     fun getDetail(id: Long) {
         invokeSuspendWithLoad {
             try{

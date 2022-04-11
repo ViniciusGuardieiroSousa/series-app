@@ -50,9 +50,9 @@ class ListSeriesFragment : BaseFragment(listOf(listModules)) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setUpLoadState()
         setUpRecyclerView()
         viewModel.getNextPage()
-        setUpLoadState()
     }
 
     private fun setUpRecyclerView() {

@@ -1,25 +1,29 @@
 package br.com.vinicius.guardieiro.sousa.series
 
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentTransaction
-import androidx.fragment.app.ListFragment
+import br.com.vinicius.guardieiro.sousa.commons.presentation.view.BaseFragment
 import br.com.vinicius.guardieiro.sousa.detailfeature.presentation.view.activity.DetailSeriesActivity
 import br.com.vinicius.guardieiro.sousa.favoritesseriesfeature.presentation.view.fragment.FavoriteFragment
 import br.com.vinicius.guardieiro.sousa.searchfeature.di.searchModules
 import br.com.vinicius.guardieiro.sousa.searchfeature.presentation.view.fragment.ListSeriesFragment
 import br.com.vinicius.guardieiro.sousa.searchfeature.presentation.view.fragment.SearchFragment
+import br.com.vinicius.guardieiro.sousa.series.databinding.ActivityMainBinding
 import br.com.vinicius.guardieiro.sousa.series.di.networkModule
+import com.google.android.material.navigation.NavigationBarView
 import org.koin.core.context.loadKoinModules
 import org.koin.core.context.unloadKoinModules
 
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), NavigationBarView.OnItemSelectedListener {
 
-    private val onItemClickListener: (Long) -> Unit ={
+    private val onItemClickListener: (Long) -> Unit = {
         startActivity(DetailSeriesActivity.getIntent(this, it))
     }
+    private val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
+
 
     init {
         loadKoinModules(listOf(networkModule, searchModules))
@@ -27,12 +31,9 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        supportFragmentManager
-        val transaction: FragmentTransaction = supportFragmentManager.beginTransaction()
-        transaction.add(R.id.container, FavoriteFragment.newInstance(onItemClickListener), "search")
-        transaction.addToBackStack(null)
-        transaction.commit()
+        setContentView(binding.root)
+        binding.navigationView.setOnItemSelectedListener(this)
+        binding.navigationView.selectedItemId = R.id.navigation_list
     }
 
     override fun onDestroy() {
@@ -40,4 +41,41 @@ class MainActivity : AppCompatActivity() {
         unloadKoinModules(listOf(networkModule, searchModules))
 
     }
+
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.navigation_list -> {
+                initFragment(
+                    ListSeriesFragment.newInstance(onItemClickListener),
+                    "list"
+                )
+                true
+            }
+            R.id.navigation_search -> {
+                initFragment(
+                    SearchFragment.newInstance(onItemClickListener),
+                    "search"
+                )
+                true
+            }
+            R.id.navigation_favorite -> {
+                initFragment(
+                    FavoriteFragment.newInstance(onItemClickListener),
+                    "favorite"
+                )
+                true
+            }
+            else -> {
+                false
+            }
+        }
+    }
+
+    private fun initFragment(fragment: BaseFragment, tag: String) {
+        val transaction: FragmentTransaction = supportFragmentManager.beginTransaction()
+        transaction.add(R.id.container, fragment, tag)
+        transaction.addToBackStack(null)
+        transaction.commit()
+    }
+
 }
