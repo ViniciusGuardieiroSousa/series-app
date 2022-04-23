@@ -6,14 +6,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
-import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import br.com.vinicius.guardieiro.sousa.commons.presentation.view.ImageDownloader
 import br.com.vinicius.guardieiro.sousa.detailfeature.R
 import br.com.vinicius.guardieiro.sousa.detailfeature.di.detailModules
 import br.com.vinicius.guardieiro.sousa.detailfeature.databinding.ActivityDetailSeriesBinding
-import br.com.vinicius.guardieiro.sousa.detailfeature.presentation.model.DetailEpisodePresentationModel
 import br.com.vinicius.guardieiro.sousa.detailfeature.presentation.model.DetailSeriesPresentationModel
 import br.com.vinicius.guardieiro.sousa.detailfeature.presentation.view.recyclerview.SeasonsSeriesAdapter
 import br.com.vinicius.guardieiro.sousa.detailfeature.presentation.viewModel.DetailSeriesViewModel
@@ -21,6 +19,7 @@ import br.com.vinicius.guardieiro.sousa.detailfeature.presentation.viewModel.Eit
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.context.loadKoinModules
 import org.koin.core.context.unloadKoinModules
+
 
 const val ID_EXTRA = "id_extra"
 
@@ -50,7 +49,6 @@ class DetailSeriesActivity : AppCompatActivity() {
         setContentView(binding.root)
         setUpRecyclerView()
         setUpObserver()
-        setUpSpinner()
         setUpLoadObserver()
         viewModel.getDetail(intent.getLongExtra(ID_EXTRA, 1))
     }
@@ -61,28 +59,6 @@ class DetailSeriesActivity : AppCompatActivity() {
         adapter = SeasonsSeriesAdapter()
         binding.detailSeasons.adapter = adapter
         binding.detailSeasons.isNestedScrollingEnabled = false
-    }
-
-    private fun setUpSpinner() {
-        binding.detailSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
-                if (viewModel.series.value is EitherPresentationModel.Right) {
-                    val value = (viewModel.series.value as EitherPresentationModel.Right).value
-                    val season = value?.episodes?.keys?.toList()?.get(p2)
-                    val listEpisodes = value?.episodes?.get(season)
-                    listEpisodes?.let {
-                        adapter.addList(it)
-                    }
-                }
-
-
-            }
-
-            override fun onNothingSelected(p0: AdapterView<*>?) {
-
-            }
-
-        }
     }
 
     private fun setUpLoadObserver() {
@@ -104,7 +80,7 @@ class DetailSeriesActivity : AppCompatActivity() {
                     val value = it.value
                     configSpinner(
                         value.episodes.keys.toList(),
-                        value.episodes[value.episodes.keys.first()]
+                        value
                     )
                     configPoster(value.image)
                     configFavorite(value.isFavorite)
@@ -133,17 +109,18 @@ class DetailSeriesActivity : AppCompatActivity() {
 
     private fun configSpinner(
         itemSeasonsList: List<Long>,
-        firstSeasonEpisodes: List<DetailEpisodePresentationModel>?
+        items: DetailSeriesPresentationModel
     ) {
-        val spinnerAdapter: ArrayAdapter<Long> = ArrayAdapter<Long>(
-            applicationContext,
-            android.R.layout.simple_spinner_dropdown_item,
-            itemSeasonsList
-        )
-        spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        binding.detailSpinner.adapter = spinnerAdapter
-        firstSeasonEpisodes?.let {
+        val first = items.episodes.keys.first()
+        binding.detailSpinner.selectedItem = first
+        items.episodes[first]?.let{
             adapter.addList(it)
+        }
+        binding.detailSpinner.list = itemSeasonsList
+        binding.detailSpinner.listener = {
+            items.episodes[it]?.let{
+                adapter.addList(it)
+            }
         }
     }
 

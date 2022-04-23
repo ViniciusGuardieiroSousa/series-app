@@ -18,7 +18,20 @@
         <entry key="..\:/guardiaoInc/Series/SearchSeriesFeature/src/main/res/layout/fragment_search.xml" value="0.20520833333333333" />
         <entry key="..\:/guardiaoInc/Series/SearchSeriesFeature/src/main/res/layout/recycler_view_search_item.xml" value="0.1" />
         <entry key="..\:/guardiaoInc/Series/app/src/main/res/layout/activity_main.xml" value="0.2957427536231884" />
+        <entry key="..\:/projetos/series-app/DetailFeature/src/main/res/layout/activity_detail_series.xml" value="0.1" />
+        <entry key="..\:/projetos/series-app/DetailFeature/src/main/res/layout/bottom_sheet_dialog.xml" value="0.20520833333333333" />
+        <entry key="..\:/projetos/series-app/DetailFeature/src/main/res/layout/component_season.xml" value="0.24818840579710144" />
+        <entry key="..\:/projetos/series-app/DetailFeature/src/main/res/layout/item_season_component.xml" value="0.1" />
+        <entry key="..\:/projetos/series-app/DetailFeature/src/main/res/layout/item_seasons_series.xml" value="0.1648148148148148" />
+        <entry key="..\:/projetos/series-app/DetailFeature/src/main/res/layout/seaso_component.xml" value="0.22" />
+        <entry key="..\:/projetos/series-app/DetailFeature/src/main/res/layout/season_component.xml" value="0.24094202898550723" />
+        <entry key="..\:/projetos/series-app/DetailFeature/src/main/res/layout/spinner_list.xml" value="0.24094202898550723" />
+        <entry key="..\:/projetos/series-app/FavoritesSeriesFeature/src/main/res/layout/fragment_favorite.xml" value="0.1" />
+        <entry key="..\:/projetos/series-app/FavoritesSeriesFeature/src/main/res/layout/recycler_view_list_item.xml" value="0.1" />
         <entry key="..\:/projetos/series-app/ListSeriesFeature/src/main/res/layout/fragment_list.xml" value="0.21145833333333333" />
+        <entry key="..\:/projetos/series-app/ListSeriesFeature/src/main/res/layout/recycler_view_list_item.xml" value="0.19427083333333334" />
+        <entry key="..\:/projetos/series-app/SearchSeriesFeature/src/main/res/layout/fragment_search.xml" value="0.19427083333333334" />
+        <entry key="..\:/projetos/series-app/SearchSeriesFeature/src/main/res/layout/recycler_view_search_item.xml" value="0.19427083333333334" />
         <entry key="..\:/projetos/series-app/app/src/main/res/drawable/menu_color.xml" value="0.1" />
         <entry key="..\:/projetos/series-app/app/src/main/res/menu/menu.xml" value="0.21145833333333333" />
       </map>

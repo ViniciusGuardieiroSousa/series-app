@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="progressSize" format="dimension"/>
+    <attr name="marginSmall" format="dimension"/>
+    <attr name="marginMedium" format="dimension"/>
+    <attr name="marginLarge" format="dimension"/>
+    <attr name="fontSmall" format="dimension"/>
+    <attr name="fontMedium" format="dimension"/>
+    <attr name="fontLarge" format="dimension"/>
+    <attr name="fontXLarge" format="dimension"/>
+
+</resources>
+

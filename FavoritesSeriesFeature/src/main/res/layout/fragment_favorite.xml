@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white">
+    android:background="?backgroundColor">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -34,11 +34,12 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
-                <Switch
+                <CheckBox
                     android:id="@+id/favorite_order"
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
-                    android:text="Order By Name"/>
+                    android:text="Order By Name"
+                    android:textColor="?colorOnBackground"/>
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/favorite_recycler_view"

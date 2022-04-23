@@ -5,16 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".presentation.view.activity.DetailSeriesActivity"
-    android:background="@android:color/white"
-    >
+    android:background="?backgroundColor">
     <ProgressBar
         android:id="@+id/detail_progress"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="?progressSize"
+        android:layout_height="?progressSize"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
+
     <androidx.core.widget.NestedScrollView
         android:id="@+id/detail_container"
         android:layout_width="match_parent"
@@ -36,15 +36,14 @@
                 app:layout_constraintEnd_toEndOf="parent" />
             <TextView
                 android:background="@color/detailBackgroundColor"
-                android:textColor="@android:color/black"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/detail_title"
                 app:layout_constraintBottom_toBottomOf="@id/detail_poster"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:textSize="24sp"
-                android:paddingStart="8dp"/>
+                android:textSize="?fontXLarge"
+                android:paddingStart="?marginMedium"/>
             <ImageView
                 android:id="@+id/detail_favorite"
                 android:layout_width="25dp"
@@ -52,16 +51,15 @@
                 app:layout_constraintStart_toEndOf="@id/detail_title"
                 app:layout_constraintTop_toBottomOf="@id/detail_title"
                 app:layout_constraintStart_toStartOf="parent"
-                app:tint="@android:color/black"
+                app:tint="?colorOnBackground"
                 />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/detail_summary"
-                android:textColor="@android:color/black"
-                android:paddingStart="8dp"
-                android:layout_marginTop="8dp"
+                android:paddingStart="?marginMedium"
+                android:layout_marginTop="?marginMedium"
                 app:layout_constraintTop_toBottomOf="@id/detail_favorite"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"/>
@@ -70,9 +68,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/detail_time_in_air"
-                android:textColor="@android:color/black"
-                android:paddingStart="8dp"
-
+                android:paddingStart="?marginMedium"
                 app:layout_constraintTop_toBottomOf="@id/detail_summary"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"/>
@@ -81,43 +77,30 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/detail_genres"
-                android:textColor="@android:color/black"
-                android:paddingStart="8dp"
+                android:paddingStart="?marginMedium"
                 app:layout_constraintTop_toBottomOf="@id/detail_time_in_air"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"/>
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:id="@+id/detail_seasons_text"
-                android:textColor="@android:color/black"
-                android:paddingStart="8dp"
-                android:text="Season:"
-                app:layout_constraintTop_toBottomOf="@id/detail_genres"
-                app:layout_constraintBottom_toTopOf="@id/detail_seasons"
-                app:layout_constraintEnd_toStartOf="@id/detail_spinner"
-                app:layout_constraintStart_toStartOf="parent"/>
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginBottom="?marginLarge"/>
 
-            <Spinner
+            <br.com.vinicius.guardieiro.sousa.detailfeature.presentation.view.component.SeasonComponent
                 android:id="@+id/detail_spinner"
-                style="@style/Widget.AppCompat.Spinner.DropDown"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:spinnerMode="dropdown"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/detail_seasons_text"
+                android:layout_marginTop="?marginLarge"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/detail_genres" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/detail_seasons"
+                android:layout_marginTop="?marginLarge"
                 app:layout_constraintTop_toBottomOf="@id/detail_spinner"
                 app:layout_constraintStart_toStartOf="parent"
                 android:nestedScrollingEnabled="false"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginBottom="4dp"
+                android:layout_marginBottom="?marginSmall"
                 android:overScrollMode="never"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>

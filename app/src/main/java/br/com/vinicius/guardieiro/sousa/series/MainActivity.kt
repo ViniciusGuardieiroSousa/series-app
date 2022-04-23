@@ -46,22 +46,19 @@ class MainActivity : AppCompatActivity(), NavigationBarView.OnItemSelectedListen
         return when (item.itemId) {
             R.id.navigation_list -> {
                 initFragment(
-                    ListSeriesFragment.newInstance(onItemClickListener),
-                    "list"
+                    ListSeriesFragment.newInstance(onItemClickListener)
                 )
                 true
             }
             R.id.navigation_search -> {
                 initFragment(
-                    SearchFragment.newInstance(onItemClickListener),
-                    "search"
+                    SearchFragment.newInstance(onItemClickListener)
                 )
                 true
             }
             R.id.navigation_favorite -> {
                 initFragment(
                     FavoriteFragment.newInstance(onItemClickListener),
-                    "favorite"
                 )
                 true
             }
@@ -71,10 +68,9 @@ class MainActivity : AppCompatActivity(), NavigationBarView.OnItemSelectedListen
         }
     }
 
-    private fun initFragment(fragment: BaseFragment, tag: String) {
+    private fun initFragment(fragment: BaseFragment) {
         val transaction: FragmentTransaction = supportFragmentManager.beginTransaction()
-        transaction.add(R.id.container, fragment, tag)
-        transaction.addToBackStack(null)
+        transaction.replace(R.id.container, fragment)
         transaction.commit()
     }
 

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="detailBackgroundColor">#88ffffff</color>
-    <color name="dividerColor">#808080</color>
+    <color name="detailBackgroundColor">#88000000</color>
 
 </resources>
