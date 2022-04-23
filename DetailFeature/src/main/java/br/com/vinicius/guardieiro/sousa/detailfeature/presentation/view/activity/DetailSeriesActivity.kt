@@ -78,7 +78,7 @@ class DetailSeriesActivity : AppCompatActivity() {
             when (it) {
                 is EitherPresentationModel.Right -> {
                     val value = it.value
-                    configSpinner(
+                    configSeasonComponent(
                         value.episodes.keys.toList(),
                         value
                     )
@@ -107,17 +107,17 @@ class DetailSeriesActivity : AppCompatActivity() {
         binding.detailGenres.text = "Genres: ${item.genres.joinToString(", ")}"
     }
 
-    private fun configSpinner(
+    private fun configSeasonComponent(
         itemSeasonsList: List<Long>,
         items: DetailSeriesPresentationModel
     ) {
         val first = items.episodes.keys.first()
-        binding.detailSpinner.selectedItem = first
+        binding.detailSeasonComponent.selectedItem = first
         items.episodes[first]?.let{
             adapter.addList(it)
         }
-        binding.detailSpinner.list = itemSeasonsList
-        binding.detailSpinner.listener = {
+        binding.detailSeasonComponent.list = itemSeasonsList
+        binding.detailSeasonComponent.listener = {
             items.episodes[it]?.let{
                 adapter.addList(it)
             }

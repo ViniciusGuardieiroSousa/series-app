@@ -84,7 +84,7 @@
                 android:layout_marginBottom="?marginLarge"/>
 
             <br.com.vinicius.guardieiro.sousa.detailfeature.presentation.view.component.SeasonComponent
-                android:id="@+id/detail_spinner"
+                android:id="@+id/detail_season_component"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="?marginLarge"
@@ -96,7 +96,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/detail_seasons"
                 android:layout_marginTop="?marginLarge"
-                app:layout_constraintTop_toBottomOf="@id/detail_spinner"
+                app:layout_constraintTop_toBottomOf="@id/detail_season_component"
                 app:layout_constraintStart_toStartOf="parent"
                 android:nestedScrollingEnabled="false"
                 app:layout_constraintEnd_toEndOf="parent"
