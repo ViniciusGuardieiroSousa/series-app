@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.SearchView
 import android.widget.Toast
+import androidx.core.widget.doOnTextChanged
 import androidx.recyclerview.widget.GridLayoutManager
 import br.com.vinicius.guardieiro.sousa.commons.presentation.view.BaseFragment
 import br.com.vinicius.guardieiro.sousa.searchfeature.databinding.FragmentSearchBinding
@@ -55,19 +56,9 @@ class SearchFragment : BaseFragment(listOf(searchModules)) {
     }
 
     private fun setUpSearch() {
-        binding.searchSearchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-            override fun onQueryTextSubmit(p0: String?): Boolean {
-                p0?.let {
-                    viewModel.searchSeriesByName(it)
-                }
-                return true
-            }
-
-            override fun onQueryTextChange(p0: String?): Boolean {
-                return true
-            }
-
-        })
+        binding.searchSearchView.doOnTextChanged { text, start, before, count ->
+            viewModel.searchSeriesByName(text.toString())
+        }
     }
 
     private fun setUpRecyclerView() {
